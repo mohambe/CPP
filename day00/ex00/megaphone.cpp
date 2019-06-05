@@ -11,25 +11,18 @@ std::string str_toupper(std::string inputStr)
 
 int main(int argc, char const *argv[])
 {
-    int i = 1;
-
     std::string userInput;
 
     if (argc >= 2)
     {
-        while (i < argc)
+        argv++;
+        while (*argv)
         {
-            userInput = static_cast<std::string>(argv[i]);
-            if (i + 1 == argc)
-            {
-                std::cout << str_toupper(userInput) << "\n";
-            }
-            else
-            {
-                std::cout << str_toupper(userInput) << " ";
-            }
-            i++;
+            userInput = static_cast<std::string>(*argv);
+            std::cout << str_toupper(userInput);
+            argv++;
         }
+        std:: cout << "\n";
     }
     else
     {
